@@ -1,5 +1,5 @@
 # docker-forked-xmrig
-Container with XMRig/2.6.2 supports Monero network after forked and optional zeroed donations level
+Container with XMRig/2.8.1 supports Monero network after forked and optional zeroed donations level
 
 ### Donations
 If you plan on changing this setting to 0 please consider making a one off donation to xmrig developer wallet:
