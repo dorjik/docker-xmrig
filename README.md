@@ -1,5 +1,5 @@
 # docker-forked-xmrig
-Container with XMRig/2.8.1 supports Monero network after forked and optional zeroed donations level
+Container with XMRig/5.5.0 gcc/9.2.0 compled with lib lubuv/1.34.0 OpenSSL/1.1.1d hwloc/1.11.13
 
 ### Donations
 If you plan on changing this setting to 0 please consider making a one off donation to xmrig developer wallet:

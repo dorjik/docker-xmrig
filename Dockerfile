@@ -1,12 +1,15 @@
-FROM alpine:latest
+FROM alpine:edge
 RUN adduser -S -D -H -h /xmrig miner
 RUN apk --no-cache upgrade && \
 	apk --no-cache add \
 		git \
 		cmake \
 		libuv-dev \
+		libuv-static \
 		openssl-dev \
 		build-base && \
+	apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing \
+		hwloc-dev && \
 	git clone https://github.com/xmrig/xmrig && \
 	cd xmrig && \
 	mkdir build && \
