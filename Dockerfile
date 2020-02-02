@@ -1,3 +1,7 @@
+# Dorjik XMrig
+#
+# Version 5.5.2
+
 FROM alpine:edge
 RUN adduser -S -D -H -h /xmrig miner
 RUN apk --no-cache upgrade && \
