@@ -1,6 +1,6 @@
 # Dorjik XMrig
 #
-# Version 5.8.1
+# Version 5.8.2
 
 FROM alpine:edge
 RUN adduser -S -D -H -h /xmrig miner
