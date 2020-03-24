@@ -1,8 +1,5 @@
-# Dorjik XMrig
-#
-# Version 5.9.0
-
 FROM alpine:edge
+ARG XMRIG_VERSION='v5.10.0'
 RUN adduser -S -D -H -h /xmrig miner
 RUN apk --no-cache upgrade && \
 	apk --no-cache add \
@@ -16,6 +13,7 @@ RUN apk --no-cache upgrade && \
 		hwloc-dev && \
 	git clone https://github.com/xmrig/xmrig && \
 	cd xmrig && \
+	git checkout ${XMRIG_VERSION} && \
 	mkdir build && \
 	cd build && \
 	sed -i -e "s/kMinimumDonateLevel = 1/kMinimumDonateLevel = 0/g" ../src/donate.h && \
