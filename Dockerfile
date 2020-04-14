@@ -1,5 +1,5 @@
 FROM alpine:edge
-ARG XMRIG_VERSION='v5.10.0'
+ARG XMRIG_VERSION='v5.11.0'
 RUN adduser -S -D -H -h /xmrig miner
 RUN apk --no-cache upgrade && \
 	apk --no-cache add \
@@ -19,6 +19,8 @@ RUN apk --no-cache upgrade && \
 	sed -i -e "s/kMinimumDonateLevel = 1/kMinimumDonateLevel = 0/g" ../src/donate.h && \
 	cmake .. -DCMAKE_BUILD_TYPE=Release -DUV_LIBRARY=/usr/lib/libuv.a -DWITH_HTTPD=OFF && \
 	make && \
+	cd .. && \
+	ls | grep -v build | rm -rf && \
 	apk del \
 		build-base \
 		cmake \
