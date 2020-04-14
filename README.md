@@ -1,5 +1,5 @@
 # XMRig in da docker
-Container with XMRig/5.10.0 gcc/9.2.0 with lubuv/1.35.0 OpenSSL/1.1.1d hwloc/1.11.13
+Container with XMRig/5.11.0 gcc/9.3.0 with lubuv/1.35.0 OpenSSL/1.1.1f hwloc/1.11.13
 
 ### Donations
 XMRig developer:
