@@ -1,5 +1,5 @@
 FROM alpine:edge
-ARG XMRIG_VERSION='v5.11.0'
+ARG XMRIG_VERSION='v5.11.1'
 RUN adduser -S -D -H -h /xmrig miner
 RUN apk --no-cache upgrade && \
 	apk --no-cache add \
