@@ -29,14 +29,7 @@ RUN apk --no-cache upgrade && \
 FROM alpine:edge
 RUN adduser -S -D -H -h /xmrig miner
 RUN apk --no-cache upgrade && \
-	apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing hwloc-dev && \
-	make && \
-	cd .. && \
-	ls | grep -v build | rm -rf && \
-	apk del \
-		build-base \
-		cmake \
-		git
+	apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing hwloc-dev 
 USER miner
 WORKDIR /xmrig/
 COPY --from=build /xmrig/build/xmrig /xmrig/xmrig
