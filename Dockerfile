@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 FROM alpine:edge AS build
+=======
+FROM alpine:edge
+>>>>>>> 31e844dc14a86f30c54ad790334ed2931768053f
 ARG XMRIG_VERSION='v5.11.2'
 RUN adduser -S -D -H -h /xmrig miner
 RUN apk --no-cache upgrade && \
@@ -24,12 +28,22 @@ RUN apk --no-cache upgrade && \
 	sed -i -e "s/kDonateHostTls, 443, m_userId/kDonateHostTls, 443, m_userName/g" ../src/net/strategies/DonateStrategy.cpp && \
 	sed -i -e "s/kDonateHost, 3333, m_userId/kDonateHost, 80, m_userName/g" ../src/net/strategies/DonateStrategy.cpp && \
 	cmake .. -DCMAKE_BUILD_TYPE=Release -DUV_LIBRARY=/usr/lib/libuv.a -DWITH_HTTPD=OFF && \
+<<<<<<< HEAD
 	make
 
 FROM alpine:edge
 RUN adduser -S -D -H -h /xmrig miner
 RUN apk --no-cache upgrade && \
 	apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing hwloc-dev
+=======
+	make && \
+	cd .. && \
+	ls | grep -v build | rm -rf && \
+	apk del \
+		build-base \
+		cmake \
+		git
+>>>>>>> 31e844dc14a86f30c54ad790334ed2931768053f
 USER miner
 WORKDIR /xmrig/
 COPY --from=build /xmrig/build/xmrig /xmrig/xmrig
